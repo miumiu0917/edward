@@ -55,6 +55,9 @@ RUN sudo apt-get install -y locales && \
   pyenv install 3.6.3 && \
   pyenv global 3.6.3 && \
   pip install -r requirement.txt && \
+  jupyter contrib nbextension install --user && \
+  jupyter nbextension enable codefolding/main && \
+  jupyter contrib nbextensions migrate && \
   jupyter nbextension enable --py widgetsnbextension --sys-prefix
 ENV LANG 'en_US.UTF-8'
 ENV LC_LANG 'en_US.UTF-8'
